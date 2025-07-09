@@ -254,6 +254,13 @@ func (i *FileInfo) detectType(modify, saveContent, readHeader bool) error {
 	case strings.HasPrefix(mimetype, "image"):
 		i.Type = "image"
 		resolution, err := calculateImageResolution(i.Fs, i.Path)
+
+        // Skip resolution calculation for TIFF files
+		ext := strings.ToLower(filepath.Ext(i.Path))
+		if ext == ".tif" || ext == ".tiff" {
+			return nil
+		}
+
 		if err != nil {
 			log.Printf("Error calculating image resolution: %v", err)
 		} else {
@@ -439,12 +446,16 @@ func (i *FileInfo) readListing(checker rules.Checker, readHeader bool) error {
 		}
 
 		if !file.IsDir && strings.HasPrefix(mime.TypeByExtension(file.Extension), "image/") {
-			resolution, err := calculateImageResolution(file.Fs, file.Path)
-			if err != nil {
-				log.Printf("Error calculating resolution for image %s: %v", file.Path, err)
-			} else {
-				file.Resolution = resolution
-			}
+            // Skip resolution calculation for TIFF files
+            ext := strings.ToLower(filepath.Ext(file.Path))
+            if ext != ".tif" && ext != ".tiff" {
+                resolution, err := calculateImageResolution(file.Fs, file.Path)
+                if err != nil {
+                    log.Printf("Error calculating resolution for image %s: %v", file.Path, err)
+                } else {
+                    file.Resolution = resolution
+                }
+            }
 		}
 
 		if file.IsDir {
