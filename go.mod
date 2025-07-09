@@ -32,9 +32,13 @@ require (
 )
 
 require (
+	github.com/GeertJohan/go.incremental v1.0.0 // indirect
+	github.com/GeertJohan/go.rice v1.0.3 // indirect
+	github.com/akavel/rsrc v0.8.0 // indirect
 	github.com/andybalholm/brotli v1.1.1 // indirect
 	github.com/asticode/go-astikit v0.55.0 // indirect
 	github.com/asticode/go-astits v1.13.0 // indirect
+	github.com/daaku/go.zipexe v1.0.2 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/dsnet/compress v0.0.2-0.20210315054119-f66993602bf5 // indirect
 	github.com/dsoprea/go-logging v0.0.0-20200710184922-b02d349568dd // indirect
@@ -46,8 +50,10 @@ require (
 	github.com/golang/geo v0.0.0-20250606134707-e8fe6a72b492 // indirect
 	github.com/golang/snappy v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/jessevdk/go-flags v1.5.0 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
 	github.com/klauspost/pgzip v1.2.6 // indirect
+	github.com/nkovacs/streamquote v1.0.0 // indirect
 	github.com/nwaples/rardecode v1.1.3 // indirect
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
@@ -57,6 +63,8 @@ require (
 	github.com/spf13/cast v1.9.2 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/ulikunitz/xz v0.5.12 // indirect
+	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	github.com/valyala/fasttemplate v1.0.1 // indirect
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
