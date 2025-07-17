@@ -138,6 +138,11 @@ user created with the credentials from options "username" and "password".`,
 		}
 
 		server := getRunParams(cmd.Flags(), d.store)
+
+        log.Printf("Enable thumbnails: %t", server.EnableThumbnails)
+        log.Printf("ResizePreview: %t", server.ResizePreview)
+        log.Printf("TypeDetectionByHeader: %t", server.TypeDetectionByHeader)
+
 		setupLog(server.Log)
 
 		root, err := filepath.Abs(server.Root)
