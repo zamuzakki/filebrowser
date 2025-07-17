@@ -46,7 +46,7 @@ func previewHandler(imgSvc ImgService, fileCache FileCache, enableThumbnails, re
         // Skip this preview for tif, as the spike is coming from rawFileHandler
         ext := strings.ToLower(filepath.Ext(vars["path"]))
         if ext == ".tif" || ext == ".tiff" {
-            return http.StatusNotImplemented, fmt.Errorf("can't create preview for %s type", ext)
+            return http.StatusNotImplemented, fmt.Errorf("Skip creating preview for %s type", ext)
         }
 
 		previewSize, err := ParsePreviewSize(vars["size"])
