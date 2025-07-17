@@ -295,6 +295,12 @@ func (i *FileInfo) detectType(modify, saveContent, readHeader bool) error {
 }
 
 func calculateImageResolution(fSys afero.Fs, filePath string) (*ImageResolution, error) {
+    ext := strings.ToLower(filepath.Ext(filePath))
+    if ext == ".tif" || ext == ".tiff" {
+        log.Printf("Skip calculateImageResolution: %s", filePath)
+        return nil, nil
+    }
+
 	file, err := fSys.Open(filePath)
 	if err != nil {
 		return nil, err
