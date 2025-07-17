@@ -29,4 +29,4 @@ VOLUME /srv /config /database
 
 EXPOSE 80
 
-ENTRYPOINT [ "tini", "--", "/init.sh", "filebrowser", "--config", "/config/settings.json" ]
+ENTRYPOINT [ "tini", "--", "/init.sh", "filebrowser", "--config", "/config/settings.json", "--disable-preview-resize", "--disable-thumbnails", "--disable-type-detection-by-header" ]
