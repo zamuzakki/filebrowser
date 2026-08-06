@@ -254,13 +254,6 @@ func (i *FileInfo) detectType(modify, saveContent, readHeader bool) error {
 	case strings.HasPrefix(mimetype, "image"):
 		i.Type = "image"
 		resolution, err := calculateImageResolution(i.Fs, i.Path)
-
-        // Skip resolution calculation for TIFF files
-		ext := strings.ToLower(filepath.Ext(i.Path))
-		if ext == ".tif" || ext == ".tiff" {
-			return nil
-		}
-
 		if err != nil {
 			log.Printf("Error calculating image resolution: %v", err)
 		} else {
